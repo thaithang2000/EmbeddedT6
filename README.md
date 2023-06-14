@@ -97,3 +97,51 @@ Giai đoạn 3: là quá trình assembler từ file main.s tạo ra file main.o(
 Câu lệnh : gcc -c main.s -o main.o.
 
 Giao đoạn 4: là quá trình linker từ file main.o tạo ra file main.exe (đối với máy tính) và file main.h để nạp vào vi điều khiển (đối với vi điều khiển) và executable (gồm các file hình, video từ libaries) 
+
+# POINTER
+**NORMAL POINTER**
+
+Trên ram có địa chỉ vùng nhớ đại diện cho các biến được khai báo. Trên Ram có 2 phần gồm địa chỉ và giá trị của địa chỉ. kích thước con trỏ phụ thuộc vào kiến trúc vi xử lý. Con trỏ dùng để lưu địa chỉ của biến được khai báo
+
+Cách khai báo
+
+int a = 10;   (giả sử địa chỉ a = 0x01)
+
+int *ptr= 0x01; (khai báo biến con trỏ interger có giá trị là địa chỉ có kiểu interger)
+
+&a = 0x01(lấy giá trị địa chỉ của biến a)
+
+*0x01 (lấy giá trị của địa chỉ là giá trị biến = 10)
+
+Printf(“Dia chi: %p”, ptr); = printf (“Dia chi: %p”, &a);
+
+Printf(“Gia tri: %d”, *ptr); = printf (“Gia tri: %d”, a);
+
+**VOID POINTER**
+
+Con trỏ kiểu dữ liệu nào chỉ lưu được giá trị kiểu dữ liệu đó ngoài trừ con trỏ void, con trỏ void chỉ trả về đc địa chỉ chứ k trả về giá trị địa chỉ được muốn trả về giá trị ta phải ép kiểu bằng cách:
+
+(*kiểu dữ liệu)tên biến
+
+**NULL POINTER**
+
+Khi khai báo 1 con trỏ mà ko khai báo địa chỉ cho nó thì nó sẽ trỏ tới 1 địa chỉ rác (địa chỉ đó có thể là trùng với địa chỉ 1 biến trong của chương trình) nên khi khai báo 1 con trỏ mà chưa dùng ta gán con trỏ null  vd int *ptr = NULL;
+
+**FUNCTION POINTER**
+
+Con trỏ hàm có chức năng trỏ đến vị trí của 1 hàm. Nó có thể trỏ đến những hàm cùng kiểu dữ liệu và cùng input parameter
+
+Vd: void (*ptr)(char,int); nó có thể trỏ đến những hàm kiểu void có inputparamrter là kiểu char và int
+
+**POINTER TO POINTER**
+
+Là con trỏ dùng để lưu địa chỉ của một con trỏ khác
+
+Vd:
+int *ptr = 0x01 (nhưng nó cũng có 1 địa chỉ giả sử 0xc1)
+
+int **ptp = &ptr = 0xc1
+
+
+
+
