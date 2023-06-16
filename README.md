@@ -142,6 +142,72 @@ int *ptr = 0x01 (nhưng nó cũng có 1 địa chỉ giả sử 0xc1)
 
 int **ptp = &ptr = 0xc1
 
+# PHÂN VÙNG NHỚ
+![image](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/c13bf7a4-e8b3-4cf5-b496-90bd5cfffdb9)
+
+**TEXT**
+
+Quyền truy cập chỉ Read và nó chưa lệnh để thực thi nên tránh sửa đổi instruction.
+
+Chứa khai báo hằng số trong chương trình (.rodata). 
+
+Source code lưu trên Ram được lưu ở phân vùng text
+
+Vd: khai báo biến hằng const float pi = 3.14; biến pi được lưu ở phân vùng text ta chỉ có thể xuất pi hay dùng pi để tính toán chứ không thể thay đổi được giá trị của pi bằng cách gán pi = 10.5; Khi này chương trình sẽ báo lỗi.
+
+**DATA**
+
+Quyền truy cập là read-write.
+
+Chứa biến toàn cục (global) or biến static (gồm global static và local static)  với giá trị khởi tạo khác không.
+
+Được giải phóng khi kết thúc chương trình. Đối với vđk là khi tắt hệ thống
+
+Vd:
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/f5ff25e8-8f35-4bc5-a838-c0108d0accfe)
+
+Các biến x,y,z được lưu ở vùng nhớ Data
+
+**BSS**
+
+Quyền truy cập là read-write.
+
+Chứa biến toàn cục (global) or biến static (gồm global static và local static) với giá trị khởi tạo bằng không or không khởi tạo. khi gán giá trị cho biến thì nó vẫn lưu ở phân vùng Bss chứ không chuyển phân vùng lưu Data
+
+Được giải phóng khi kết thúc chương trình. Đối với vđk là khi tắt hệ thống. 
+
+Vd:
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/7e7d3717-cb88-432f-96fd-f3d6d60615d6)
+
+Các biến x,y,z được lưu ở vùng nhớ BSS và khi gán giá trị cho các biến chúng vẫn lưu ở vùng BSS chứ không chuyển sang Data.
+
+**STACK**
+
+Quyền truy cập là read-write.
+
+Được sử dụng cấp phát cho biến local, input parameter của hàm,…
+
+Sẽ được giải phóng khi ra khỏi block code/hàm
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/807d6158-299b-4016-abb2-7fe07638bc48)
+
+Khi vào hàm clear, các input parameter a,b sẽ được cấp cho 1 địa chỉ chưa được dùng trên RAM. Sau đó, gán giá trị a = x = 10, b = y = 5. Rồi gán a=0,b=0 rồi thoát khỏi hàm và giải phóng địa chỉ của a và b. Từ đó, ta thấy được hàm clear không làm thay đổi giá trị của x,y mà chỉ làm thay đổi giá trị của a,b. 
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/8a8ac088-e5ac-4a62-b61a-0617034b66ce)
+
+Lưu ý: Khi nào ta chỉ muốn đọc thông tin giá trị truyền vào thì ta dùng khai báo input parameter là biến, còn ta muốn thay đổi giá trị biến ta truyền vào thì ta dùng khai báo input parameter là con trỏ.
+
+**HEAP**
+
+Quyền truy cập là read-write.
+
+Được sử dụng để cấp phát bộ nhớ động như: Malloc, Calloc,Realloc…
+
+Sẽ được giải phóng khi gọi hàm free,…
+
+
 
 
 
