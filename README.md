@@ -207,6 +207,31 @@ Quyền truy cập là read-write.
 
 Sẽ được giải phóng khi gọi hàm free,…
 
+# STATIC_EXTERN_VOLATILE
+**STATIC**
+
+Static gồm static toàn cục (global) và static cục bộ (local). Được lưu ở phân vùng data hoặc bss và tồn tại hết vòng đời của chương trình.
+
+*Static toàn cục (global) là biến, hàm được tạo ra và chỉ có giá trị trong file khởi tạo ra chúng. Vì là biến, hàm global nên ta có thể dùng chúng bất cứ khi nào cần nhưng không thể dùng chúng ở file khác vì là biến, hàm static.
+
+*Static cục bộ (local) chỉ khởi tạo 1 lần duy nhất và giá trị sẽ không bị mất khi thoát khỏi hàm mà giá trị của biến có thể tích lũy.
+
+**EXTERN**
+
+Extern dùng để gọi một biến hay một hàm từ file khác (không phải static) để sử dụng. Khi khai báo hàm hay biến dùng extern ta không được gán giá trị cho chúng. 
+
+Câu lệnh: extern <kiểu dữ liệu> <tên biến hoặc hàm>;
+
+Cách build chương trình: gcc main.c "tên file muốn build" -o main. Cách chạy chương trình: ./main
+
+**VOLATILE**
+
+Biến volatile là biến thông báo cho complier biết không được tối ưu biến này (thường dùng cho các biến lấy giá trị cảm biến, các biến data không biết khi nào thay đổi, nhiều task chạy song song dùng chung 1 biến). Do compiler có chế độ tối ưu chương trình để tăng tốc độ của chương trình nên sẽ bỏ qua các câu lệnh không làm thay đổi giá trị hay các lệnh lặp được gọi là optimizing. Nhưng trong các trường hợp nêu trên, giá trị thay đổi nhưng compiler không nhận ra và thực hiện việc tối ưu khiến cho kết quá sai.
+
+Câu lệnh: volatile <kiểu dữ liệu> <tên biến>;
+
+
+
 
 
 
