@@ -230,6 +230,95 @@ Biến volatile là biến thông báo cho complier biết không được tối
 
 Câu lệnh: volatile <kiểu dữ liệu> <tên biến>;
 
+# OOP (C++)
+**CLASS**
+
+Class hay lớp là một mô tả trừu tượng (abstract) của nhóm các đối tượng (object) có cùng bản chất, ngược lại mỗi một đối tượng là một thể hiện cụ thể (instance) cho những mô tả trừu tượng đó. Một class trong C++ sẽ có các đặc điểm sau:
+ 
+ *Một class bao gồm các thành phần dữ liệu (thuộc tính hay property) và các phương thức (hàm thành phần hay method).
+ 
+ *Class thực chất là một kiểu dữ liệu do người lập trình định nghĩa.
+ 
+ *Trong C++, từ khóa class sẽ chỉ điểm bắt đầu của một class sẽ được cài đặt. 
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/1d2db633-516e-4b60-8a15-1e9c655380d7)
+
+**Access modifiers & properties declaration**
+
+Access modifier là phạm vi truy cập của các thuộc tính và phương thức sẽ được khai báo bên dưới nó. Có 3 phạm vi truy cập trong C++ là public, private và protected.
+
+*Các thuộc tính và phương thức khai báo public thì có thể được truy cập trực tiếp thông qua instance của class đó. Các thuộc tính nên khai báo là public nếu bạn không có ràng buộc điều kiện trước khi gán (người dùng có thể thoải mái gán giá trị) hoặc bạn không cần xử lý trước khi trả về giá trị thuộc tính.
+
+*Các thuộc tính private thường được sử dụng khi bạn không mong muốn người khác có thể tùy ý gán giá trị hoặc là bạn muốn xử lý trước khi trả về 
+giá trị.
+
+*Đối với protected, các phương thức và thuộc tính chỉ có thể truy cập qua các class kế thừa nó hoặc chính nó.
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/9f01ed54-caef-4054-8e0f-334dd96c980a)
+
+**Method declaration**
+
+Phương thức cũng giống như một hàm bình thường.Đối với phương thức thì có hai cách định nghĩa thi hành: định nghĩa thi hành trong lúc định nghĩa class và định nghĩa thi hành bên ngoài class.
+
+Định nghĩa thi hành bên trong class:
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/adf316fd-c56d-4b3d-b9fd-83919575d390)
+
+Định nghĩa thi hành bên ngoài class:
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/58501177-86be-4b42-81f3-f67b271a2786)
+
+**Constructor**
+
+Constructor hay hàm dựng là một hàm đặc biệt, nó sẽ được gọi ngay khi chúng ta 
+khởi tạo một object.
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/31171ca7-939a-4a91-a289-b0ff731e93ee)
+
+**Destructor**
+
+Có nhiệm vụ thu hồi lại bộ nhớ được cấp phát cho đối tượng thuộc lớp
+
+**Static member**
+
+Static member hay thành viên tĩnh trong class C++ cũng tương tự như với static variable (biến tĩnh) trong function. 
+
+Đối với function, sau khi thực hiện xong khối lệnh và thoát thì biến tĩnh vẫn sẽ không mất đi. Đối với class, thành viên tĩnh sẽ là thuộc tính dùng chung cho tất cả các đối tượng của class đó, cho dù là không có đối tượng nào tồn tại. Tức là bạn có thể khai báo nhiều object, mỗi object các thuộc tính của nó đều khác nhau nhưng riêng static thì chỉ có một và static member tồn tại trong suốt chương trình cho dù có hay không có object nào của nó hay nói ngắn gọn là dùng chung một biến static
+
+**Đặc tính của lập trình hướng đối tượng**
+
+*Inheritance (Tính kế thừa ) trong lập trình hướng đối tượng có ý nghĩa, một class có thể kế thừa các thuộc tính của một class khác đã tồn tại trước đó.
+
+Khi một class con được tạo ra bởi việc kế thừa thuộc tính của class cha thì chúng ta 
+sẽ gọi class con đó là subclass trong C++, và class cha chính là superclass trong 
+C++.
+
+*Abstraction (Tính trừu tượng) trong lập trình hướng đối tượng là một khả năng 
+mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông 
+tin cần xử lý.
+
+Điều đó có nghĩa, bạn có thể xử lý một đối tượng bằng cách gọi tên một phương 
+thức và thu về kết quả xử lý, mà không cần biết làm cách nào đối tượng đó được các 
+thao tác trong class.
+
+Ví dụ đơn giản, chương trình tìm nghiệm phương trình bậc 2, ta chỉ cần nhập thông số của phương trình. Hệ thống sẽ xuất ra nghiệm, người dùng không cần biết quá trình xử lý ra nghiệm (tính delta, x1, x2) ra sao.
+
+*Polymorphism (Tính đa hình) trong lập trình hướng đối tượng là một khả năng mà một phương thức trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy thuộc vào dữ liệu được xử lý.
+
+Ví dụ đơn giản, cùng là một class tìm nghiệm phương trình bậc 2, kết quả khác nhau với mỗi đầu vào khác nhau
+
+*Encapsulation (Tính đóng gói) trong lập trình hướng đối tượng có ý nghĩa không 
+cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
+mà chỉ có phương thức nội tại của đối tượng có thể thay đổi chính nó.
+
+Điều đó có nghĩa, dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
+ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn 
+vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
+
+Ví dụ đơn giản, cùng là một class tìm nghiệm phương trình bậc 2, việc tính toán delta và căng delta ta không cho người dùng sửa đổi công thức đó
+
+
+
 
 
 
