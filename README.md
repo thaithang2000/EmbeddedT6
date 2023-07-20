@@ -305,7 +305,7 @@ Ví dụ đơn giản, chương trình tìm nghiệm phương trình bậc 2, ta
 
 *Polymorphism (Tính đa hình) trong lập trình hướng đối tượng là một khả năng mà một phương thức trong class có thể đưa ra các kết quả hoàn toàn khác nhau, tùy thuộc vào dữ liệu được xử lý.
 
-Ví dụ đơn giản, cùng là một class tìm nghiệm phương trình bậc 2, kết quả khác nhau với mỗi đầu vào khác nhau
+Ví dụ đơn giản, cùng là một class có thể có 2 method tên giống nhau nhưng input parameter khác nhau thì tùy vào input parameter nó sẽ dùng method nào
 
 *Encapsulation (Tính đóng gói) trong lập trình hướng đối tượng có ý nghĩa không 
 cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
