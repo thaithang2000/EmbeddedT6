@@ -317,11 +317,53 @@ vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông 
 
 Ví dụ đơn giản, cùng là một class tìm nghiệm phương trình bậc 2, việc tính toán delta và căng delta ta không cho người dùng sửa đổi công thức đó
 
+**Namespace**
 
+Dùng khi file có nhiều biến hay hàm có tên giống nhau và tham số truyền vào nhưng có chức năng khác nhau. Để cho trình biên dịch hiểu được ta muốn dùng biến hay hàm nào ta dùng namespace.
 
+Định nghĩa:
 
+Namespace là từ khóa trong C++ được sử dụng để định nghĩa một phạm vi nhằm mục đích phân biệt các hàm, lớp, biến, ... cùng tên trong các thư viện khác nhau.
 
+Cách khai báo: 
 
+namespace Ten_namespace{
+    khai bao ham, bien, class
+}
 
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/e30ed9f2-beea-4787-8a42-c3f46da7bf37)
+
+Cách gọi hàm trong namespace:
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/bbe2b5e1-51b1-4b8a-84e9-5e2aaa0e626d)
+
+**Template**
+
+Template (khuôn mẫu) là một từ khóa trong C++, và là một kiểu dữ liệu trừu tượng tổng quát hóa cho các kiểu dữ liệu int, float, double, bool...
+
+Template trong C++ có 2 loại đó là function template & class template.
+
+Template giúp người lập trình định nghĩa tổng quát cho hàm và lớp thay vì phải nạp chồng (overloading) cho từng hàm hay phương thức với những kiểu dữ liệu khác nhau.
+
+VD: ![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/04bcbb76-5652-4875-a39a-00a885b45f6c)
+
+**Hàm ảo(virtual function)**
+
+Hàm ảo (virtual function) là một hàm thành viên trong lớp cơ sở mà lớp dẫn xuất khi kế thừa cần phải định nghĩa lại.
+
+Hàm ảo được sử dụng trong lớp cơ sở khi cần đảm bảo hàm ảo đó sẽ được định nghĩa lại trong lớp dẫn xuất. Việc này rất cần thiết trong trường hợp con trỏ có kiểu là lớp cơ sở trỏ đến đối tượng của lớp dẫn xuất.
+
+Hàm ảo là một phần không thể thiếu để thể hiện tính đa hình trong kế thừa được hỗ trợ bởi nguồn ngữ C++.
+
+Lưu ý: Con trỏ của lớp cơ sở có thể chứa địa chỉ của đối tượng thuộc lớp dẫn xuất, nhưng ngược lại thì không được.
+
+Hàm ảo chỉ khác hàm thành phần thông thường khi được gọi từ một con trỏ. Sử dụng hàm ảo khi muốn con trỏ đang trỏ tới đối tượng của lớp nào thì hàm thành phần của lớp đó sẽ được gọi mà không xem xét đến kiểu của con trỏ.
+
+**Vector**
+
+Giống như là mảng (array), vector trong C++ là một đối tượng dùng để chứa các đối tượng khác, và các đối tượng được chứa này cũng được lưu trữ một cách liên tiếp 
+trong vector.
+
+Tuy nhiên, nếu như số lượng phần tử (size) của một mảng là cố định, thì ở vector, nó hoàn toàn có thể thay đổi trong suốt quá trình làm việc của chương trình
 
 
