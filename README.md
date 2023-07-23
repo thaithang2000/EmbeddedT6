@@ -366,4 +366,38 @@ trong vector.
 
 Tuy nhiên, nếu như số lượng phần tử (size) của một mảng là cố định, thì ở vector, nó hoàn toàn có thể thay đổi trong suốt quá trình làm việc của chương trình
 
+Các modifier
+1. push_back(): Hàm đẩy một phần tử vào vị trí sau cùng của vector. Nếu kiểu của đối tượng được truyền dưới dạng tham số trong push_back() không giống với kiểu của vector thì sẽ bị ném ra.
+  ten-vector.push_back(ten-cua-phan-tu);
+
+2. assign(): Nó gán một giá trị mới cho các phần tử vector bằng cách thay thế các giá trị cũ.
+ten-vector.assign(int size, int value);
+
+3. pop_back(): Hàm pop_back () được sử dụng để xóa đi phần tử cuối cùng một vector.
+
+4. insert(): Hàm này chèn các phần tử mới vào trước phần tử trước vị trí được trỏ bởi vòng lặp.Chúng ta cũng có thể chuyển một số đối số thứ ba, đếm số lần phần tử được chèn vào trước vị trí được trỏ.
+
+5. erase(): Hàm được sử dụng để xóa các phần tử tùy theo vị trí vùng chứa
+
+6. emplace(): Nó mở rộng vùng chứa bằng cách chèn phần tử mới vào
+
+7. emplace_back(): Nó được sử dụng để chèn một phần tử mới vào vùng chứa vector, phần tử mới sẽ được thêm vào cuối vector
+
+8. swap(): Hàm được sử dụng để hoán đổi nội dung của một vector này với một vector khác cùng kiểu. Kích thước có thể khác nhau.
+
+9. clear(): Hàm được sử dụng để loại bỏ tất cả các phần tử của vùng chứa vector
+
+**List**
+List được hiểu như một mảng (array) nhân tạo do người dùng tạo ra. Đối với array hay vector thì các địa chỉ của các member là các địa chỉ liền kề nhau còn địa chỉ các member của list là ngẫu nhiên.
+
+Cách khai báo list: list<kiểu dữ liệu> tên list;
+
+Ta có thể dùng các modifier của vector cho list nhưng không thể dùng trực tiếp vì địa chỉ các member trong list là ngẫu nhiên nên phải dùng thông qua iterator
+
+Cách khai báo iterator: list<kiểu dữ liệu>::iterator tên biến;
+
+Vd:
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/2dbd37f2-e6fc-47c8-b2bf-426dcc4da415)
+
+![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/b9647df0-d4dc-4abf-babe-2f3545275611)
 
