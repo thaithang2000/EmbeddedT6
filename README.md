@@ -292,14 +292,19 @@ Static member hay thành viên tĩnh trong class C++ cũng tương tự như v�
 Khi một class con được tạo ra bởi việc kế thừa thuộc tính của class cha thì chúng ta 
 sẽ gọi class con đó là subclass trong C++, và class cha chính là superclass trong 
 C++.
+Có 3 kiểu kế thừa:
+
+Kiểu public: Class cha là public, Class con là public. Class cha là protected, class con là protected. Class cha là private, không kế thừa.
+
+Kiểu protected: Class cha là public, Class con là protected. Class cha là protected, class con là protected. Class cha là private, không kế thừa.
+
+Kiểu private: Class cha là public, Class con là private. Class cha là protected, class con là private. Class cha là private, không kế thừa.
 
 *Abstraction (Tính trừu tượng) trong lập trình hướng đối tượng là một khả năng 
 mà chương trình có thể bỏ qua sự phức tạp bằng cách tập trung vào cốt lõi của thông 
 tin cần xử lý.
 
-Điều đó có nghĩa, bạn có thể xử lý một đối tượng bằng cách gọi tên một phương 
-thức và thu về kết quả xử lý, mà không cần biết làm cách nào đối tượng đó được các 
-thao tác trong class.
+Điều đó có nghĩa, ta dùng một method, hay gán giá trị cho property (trong protected hay private) thông qua một method chính. Người dùng chỉ cần dùng 1 method duy nhất để có kết quả mong muốn.
 
 Ví dụ đơn giản, chương trình tìm nghiệm phương trình bậc 2, ta chỉ cần nhập thông số của phương trình. Hệ thống sẽ xuất ra nghiệm, người dùng không cần biết quá trình xử lý ra nghiệm (tính delta, x1, x2) ra sao.
 
@@ -351,7 +356,7 @@ VD: ![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/04bc
 
 Hàm ảo (virtual function) là một hàm thành viên trong lớp cơ sở mà lớp dẫn xuất khi kế thừa cần phải định nghĩa lại.
 
-Hàm ảo được sử dụng trong lớp cơ sở khi cần đảm bảo hàm ảo đó sẽ được định nghĩa lại trong lớp dẫn xuất. Việc này rất cần thiết trong trường hợp con trỏ có kiểu là lớp cơ sở trỏ đến đối tượng của lớp dẫn xuất.
+Hàm ảo được sử dụng trong trường hợp một method trong class cha được class con kế thừa và class con muốn thay đổi method đó (override).
 
 Hàm ảo là một phần không thể thiếu để thể hiện tính đa hình trong kế thừa được hỗ trợ bởi nguồn ngữ C++.
 
@@ -401,3 +406,5 @@ Vd:
 
 ![Capture](https://github.com/thaithang2000/EmbeddedT6/assets/136157839/b9647df0-d4dc-4abf-babe-2f3545275611)
 
+**Lambda**
+Là một hàm được tạo ra để sử dụng ngay lập tức nhầm tránh tình trạng lãng phí bộ nhớ
