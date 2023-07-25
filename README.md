@@ -316,6 +316,8 @@ Ví dụ đơn giản, cùng là một class có thể có 2 method tên giống
 cho phép người sử dụng các đối tượng thay đổi trạng thái nội tại của một đối tượng, 
 mà chỉ có phương thức nội tại của đối tượng có thể thay đổi chính nó.
 
+Là không được truy cập trực tiếp từ property mà phải thông qua method.
+
 Điều đó có nghĩa, dữ liệu và thông tin sẽ được đóng gói lại, giúp các tác động bên 
 ngoài một đối tượng không thể làm thay đổi đối tượng đó, nên sẽ đảm bảo tính toàn 
 vẹn của đối tượng, cũng như giúp dấu đi các dữ liệu thông tin cần được che giấu.
